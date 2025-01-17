@@ -136,6 +136,10 @@ We recommend you to use launch file for start the camera node with or without pa
 
 more information in https://github.com/IntelRealSense/realsense-ros/tree/4.51.1
 
+After start the camera node, you can visualize data from camera in rviz2 and the result is in picture below.
+
+<p align="center"><img src="Images/L515inRviz.png" alt="Image Description" /></p>
+
 # Intel-Realsense-T265-LiDAR-Camera
 
 The Intel® RealSense™ Tracking Camera T265 is a stand-alone, inside-out tracking device designed to provide high-performance guidance and navigation for various applications, including robotics, drones, and augmented reality (AR) systems. It utilizes proprietary Visual Inertial Odometry (VIO) technology to deliver precise six-degrees-of-freedom (6DoF) tracking without relying on external sensors or GPS.
@@ -201,3 +205,7 @@ ros2 launch rtabmap_launch rtabmap.launch.py     rtabmap_args:="--delete_db_on_s
 ```bs
 ros2 run imu_filter_madgwick imu_filter_madgwick_node --ros-args -p use_mag:=false --ros-args -p publish_tf:=true --ros-args -p world_frame:="enu" --ros-args --remap /imu/data_raw:=/camera/imu --ros-args --remap /imu/data:=/rtabmap/imu --ros-args -p fixed_frame:=camera_link
 ```
+
+After using rtabmap package, the result of it will be like this picture below and you can do mapping with vslam via rtabmap package.
+
+<p align="center"><img src="Images/L515withRTAB.png" alt="Image Description" /></p>
